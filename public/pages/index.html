@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3174953092993735"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Srmap API</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="dashboard-header">
+            <div class="animal-face">
+                <div class="eyes">
+                    <div class="eye left-eye">
+                        <div class="pupil"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="pupil"></div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="dashboard-title">Srmap API - Login</h1>
+            <p class="dashboard-subtitle">Track attendance, manage bunk limits, stay on target</p>
+        </div>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">USERNAME</label>
+                <input type="text" id="username" name="username" placeholder="AP23XXXXXXXXX" required>
+            </div>
+            <div class="form-group">
+                <label for="password">PASSWORD</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <i class="toggle-password" onclick="togglePassword()">👁️</i>
+                </div>
+            </div>
+            <div class="login-options">
+                <a href="https://student.srmap.edu.in/srmapstudentcorner/StudentLoginPage" class="forgot-password">Forgot password?</a>
+                <br/>
+                <a type="test" class="forgot-password">Test Login</a>
+            </div>
+            <button type="submit" class="submit-btn">LOGIN</button>
+        </form>
+        <div class="login-footer">
+            Enter Your Credentials From Student Portal
+        </div>
+    </div>
+</body>
+<script src="/js/login.js"></script>
+</html>

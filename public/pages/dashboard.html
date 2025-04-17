@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srmap API</title>
+    <link rel="icon" type="image/x-icon" href="/favicon">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3174953092993735"crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="loadingOverlay">
+        <img class="loading-gif" src="/loading" alt="Loading..." />
+    </div>
+    <div id="overlay" onclick="closeModal()"></div>
+    <div id="reportModal">
+        <h3>Report / Suggest / Contact</h3>
+        <div class="select-buttons">
+            <button class="toggle-button" onclick="selectOption(this, 'Issue')">Issue</button>
+            <button class="toggle-button" onclick="selectOption(this, 'Contact')">Contact</button>
+            <button class="toggle-button" onclick="selectOption(this, 'Suggest')">Suggest</button>
+        </div>
+        <div id="emailField" style="display: none; margin-bottom: 10px;">
+            <input type="email" id="emailInput" placeholder="Enter your email" />
+        </div>
+        <textarea id="bugDescription" placeholder="Describe The Issue..."></textarea>
+        <div class="modal-buttons">
+            <button onclick="submitReport()">Submit</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="dashboard-container" id="dashboard-section">
+            <div class="user-info">
+                <div class="user-name" id="user-name">LoadingName......</div>
+                <h6 class="tip" id="tip" onclick="activateTab(`notices`)"></h6>
+                <button type="submit" class="logout-btn">Logout</button>
+            </div>
+            <ul class="nav-tabs">
+                <li>
+                    <button class="tab-link active" data-tab="attendance-details">ATTENDANCE</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="time-table">TIME TABLE</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="attendance-code">ATT CODE<p style="color: red;">(new)</p></button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="notices">NOTICES</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="subjects">USERINFO</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="changelog">CHANGELOG</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="settings">SETTINGS</button>
+                </li>
+                <li>
+                    <button class="tab-link" data-tab="ppandtac">PRI&TAC</button>
+                </li>
+            </ul>
+            <div id="attendance-details" class="tab-content active">
+                <h2>ATTENDANCE DETAILS</h2>
+                <div class="section" id="attendance-section"></div>
+            </div>
+            <div id="attendance-code" class="tab-content">
+                <h2>ATTENDANCE CODE</h2>
+                <div class="section" id="attendance-code-section"></div>
+            </div>
+            <div id="time-table" class="tab-content">
+                <div class="current-classes" id="current-classes">
+                    <h3>TODAY'S CLASSES</h3>
+                </div>
+                <h2>TIME TABLE</h2>
+                <div class="timetable-scroll" id="timetable-section"></div>
+            </div>
+            <div id="notices" class="tab-content">
+                <h2>NOTICES</h2>
+                <div class="section" id="notice-section"></div>
+            </div>
+            <div id="subjects" class="tab-content">
+                <h2>USERINFO & SUBJECTS</h2>
+                <div class="subject-list" id="subjects-section"></div>
+            </div>
+            <div id="ppandtac" class="tab-content">
+                <h1>Privacy Policy</h1>
+                <p>Last Updated: <strong>March 9, 2025</strong></p>
+                <p>Remember Your Data Is Encrypted And Stored In Database And Can Only Be Decrypted By Your Password.</p>
+                <br/>
+                <h2>1. Information We Collect</h2>
+                <ul class="ul-data">
+                    <li>We Collect Attendance, Timetable, Subject And Profile In The Form Of Encrypted Data(using cryptographer package) And This Data Can Be Decrypted By Your Password Only.</li>
+                </ul>
+                <br/>
+                <h2>2. How We Use Your Information</h2>
+                <ul class="ul-data">
+                    <li>We Use Your Data to Load the Page Content as Fast as Possible Instead of Making a Request to the Student Portal Every Time You Visit. The Data Gets Updated in the Student Portal Between 12–3 AM.</li>
+                </ul>
+                <br/>
+                <h2>3. Data Sharing and Disclosure</h2>
+                <ul class="ul-data">
+                    <li>We Don't Share Data With Anyone, And Even We Cannot See Your Data As It Was Encrypted.</li>
+                </ul>
+                <br/>
+                <h2>4. Data Security</h2>
+                <ul class="ul-data">
+                    <li>We Take Reasonable Steps To Protect Your Data From Unauthorized Access.</li>
+                </ul>
+                <br/>
+                <h2>5. Your Rights</h2>
+                <ul class="ul-data">
+                    <li>Access Your Data.</li>
+                    <li>Deletion Of Your Data(setting->delete data).</li>
+                </ul>
+                <br/>
+                <h2>6. Changes To This Policy</h2>
+                <ul class="ul-data">
+                    <li>We May Update Our Privacy Policy Page With A Prior Notification.</li>
+                </ul>
+                <br/>
+                <h2>7. Contact Us</h2>
+                <ul class="ul-data">
+                    <li>If You Have Any Question About This Page Or Our Website Contact Us:- srmap.api@gmail.com</li>
+                </ul>
+                <h1>Terms And Conditions</h1>
+                <p>Last Updated: <strong>March 9, 2025</strong></p>
+                <p>This Is Terms Of Service For Srmap API, With This You Abide To The Following Terms And Conditions.</p>
+                <br/>
+                <h2>1. Right To Terminate</h2>
+                <ul class="ul-data">
+                    <li>We Deserve Right To Terminate Your Account/IP If You Engage Spamming, AbusingAPI, MisueOfData.</li>
+                </ul>
+                <br/>
+                <h2>2. User Responsibilities</h2>
+                <ul class="ul-data">
+                    <li>You Are Responsible For Maintaining The Confidentiality Of Your Login Credentials.</li>
+                </ul>
+                <br/>
+                <h2>3. Changes To This Policy</h2>
+                <ul class="ul-data">
+                    <li>We May Update Our Terms And Conditions Page With A Prior Notification.</li>
+                </ul>
+                <br/>
+                <h2>7. Contact Us</h2>
+                <ul class="ul-data">
+                    <li>If You Have Any Question About This Page Or Our Website Contact Us:- srmap.api@gmail.com</li>
+                </ul>
+            </div>
+            <div id="changelog" class="tab-content">
+                <h1>Change Log</h1>
+                <p>Last Updated: <strong>March 28, 2025</strong></p>
+                <p>This Is Change Log For New Version Of This Website(1.1).</p>
+                <br/>
+                <h5>1. Attendance</h2>
+                <ul class="ul-data">
+                    <li>Users Can Now See How Many Classes They Have Attendance In Attendance Tab.</li>
+                </ul>
+                <br/>
+                <h5>2. Notices</h5>
+                <ul class="ul-data">
+                    <li>A New Tab "Notices" Has Been Added To Keep You Updated With Important Announcements.</li>
+                    <li>A Short Text From Starting Line Of A New Notice Can Be Seen Below You Name.</li>
+                </ul>
+                <br/>
+                <h5>3. Userinfo & Subjects</h5>
+                <ul class="ul-data">
+                    <li>"Subjects" Tab Has Been Renamed With "Userinfo", Now Providing An Feature That Displays User Details And Users Subjects Details In Same Tab.</li>
+                </ul>
+                <br/>
+                <h2>4. Settings</h2>
+                <ul class="ul-data">
+                    <li>Added New "Report" Button To Report/Contact/Suggest Something.</li>
+                    <li>You Can Use Same Report Button To Contact Us.</li>
+                    <li>Now, Settings Tab Shows No.of Limits Left To Use "Fetch Data" Button.</li>
+                </ul>
+            </div>
+            <div id="settings" class="tab-content"></div>
+            <div class="login-footer"> 
+                The Data Displayed Is Sourced From Srmap Student Portal.
+            </div>
+        </div>
+    </div>
+    <script src="./js/dashboard.js"></script>
+  </body>

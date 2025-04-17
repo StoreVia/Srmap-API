@@ -1,0 +1,24 @@
+{
+  "name": "srmapi.discord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@agc93/privatebin": "^0.0.3",
+    "axios": "^1.8.4",
+    "better-sqlite3": "^11.9.1",
+    "colors": "^1.4.0",
+    "discord.js": "^14.18.0",
+    "dotenv": "^16.4.7",
+    "mongodb": "^6.15.0",
+    "node-fetch": "^3.3.2",
+    "quick.db": "^9.1.7",
+    "write-file-atomic": "^6.0.0"
+  }
+}
